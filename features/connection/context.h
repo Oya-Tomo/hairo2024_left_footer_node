@@ -28,7 +28,7 @@ typedef struct
 
 typedef struct
 {
-    float speed; // 0.0 ~ 1.0
+    float speed; // -1.0 ~ 1.0
 } drive_state_t;
 
 typedef struct
