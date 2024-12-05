@@ -10,8 +10,8 @@ void drive_task();
 
 void drive_stop();
 
-void set_center_belt_speed();
+void set_center_belt_speed(double speed);
 
-void set_front_belt_speed();
+void set_front_belt_speed(double speed);
 
-void set_back_belt_speed();
+void set_back_belt_speed(double speed);
