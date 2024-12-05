@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef CONNECTION_CONNECTION_H
-#define CONNECTION_CONNECTION_H
-
 #include "pico/stdlib.h"
 #include "pico/i2c_slave.h"
 #include "hardware/i2c.h"
@@ -18,5 +15,3 @@ system_state_t get_system_state();
 drive_state_t get_drive_state();
 
 flipper_state_t get_flipper_state();
-
-#endif // CONNECTION_CONNECTION_H
