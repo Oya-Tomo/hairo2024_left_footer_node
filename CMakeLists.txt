@@ -32,8 +32,12 @@ pico_sdk_init()
 add_executable(left_footer_node
         main.cpp
         features/connection/connection.cpp
+        features/connection/context.cpp
+        features/drive/drive.cpp
         utils/utils.cpp
         )
+
+add_subdirectory(lib/sclp)
 
 pico_set_program_name(left_footer_node "left_footer_node")
 pico_set_program_version(left_footer_node "0.1")
@@ -45,6 +49,7 @@ pico_enable_stdio_usb(left_footer_node 1)
 target_link_libraries(left_footer_node
         pico_stdlib
         pico_i2c_slave
+        sclp
         )
 
 # Add the standard include files to the build
