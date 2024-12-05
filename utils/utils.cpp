@@ -9,3 +9,8 @@ double deg_to_rad(double deg)
 {
     return deg * M_PI / 180.0;
 }
+
+double guard(double x, double min, double max)
+{
+    return (x < min) ? min : (x > max ? max : x);
+}
