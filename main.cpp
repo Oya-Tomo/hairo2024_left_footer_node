@@ -21,6 +21,20 @@ void setup()
     irq_set_enabled(IO_IRQ_BANK0, true);
 }
 
+void task()
+{
+    system_state_t system_state = get_system_state();
+
+    if (system_state.is_running)
+    {
+        drive_task();
+    }
+    else
+    {
+        drive_stop();
+    }
+}
+
 int main()
 {
     setup();
