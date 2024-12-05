@@ -51,9 +51,9 @@ QEI::config_t back_belt_qei_config = {
 
 PID center_belt_pid(PID::sPID);
 PID::config_t center_belt_pid_config = {
-    .Kp = 0.01,
-    .Ki = 0.00,
-    .Kd = 0.01,
+    .Kp = 0.001,
+    .Ki = 0.000,
+    .Kd = 0.001,
     .Kf = 0,
     .guard = true,
     .min = -0.1,
@@ -62,9 +62,9 @@ PID::config_t center_belt_pid_config = {
 
 PID front_belt_pid(PID::sPID);
 PID::config_t front_belt_pid_config = {
-    .Kp = 0.01,
-    .Ki = 0.00,
-    .Kd = 0.01,
+    .Kp = 0.001,
+    .Ki = 0.000,
+    .Kd = 0.001,
     .Kf = 0,
     .guard = true,
     .min = -0.1,
@@ -73,9 +73,9 @@ PID::config_t front_belt_pid_config = {
 
 PID back_belt_pid(PID::sPID);
 PID::config_t back_belt_pid_config = {
-    .Kp = 0.01,
-    .Ki = 0.00,
-    .Kd = 0.01,
+    .Kp = 0.001,
+    .Ki = 0.000,
+    .Kd = 0.001,
     .Kf = 0,
     .guard = true,
     .min = -0.1,
