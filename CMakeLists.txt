@@ -31,6 +31,7 @@ pico_sdk_init()
 
 add_executable(left_footer_node
         main.cpp
+        features/connection/connection.cpp
         utils/utils.cpp
         )
 
@@ -50,6 +51,7 @@ target_link_libraries(left_footer_node
 target_include_directories(left_footer_node PRIVATE
   ${CMAKE_CURRENT_LIST_DIR}
   ${CMAKE_CURRENT_LIST_DIR}/.. # for our common lwipopts or any other standard includes, if required
+  ${CMAKE_CURRENT_LIST_DIR}/lib
 )
 
 # Add any user requested libraries
