@@ -34,6 +34,7 @@ add_executable(left_footer_node
         features/connection/connection.cpp
         features/connection/context.cpp
         features/drive/drive.cpp
+        features/flipper/flipper.cpp
         features/ticker/ticker.cpp
         utils/utils.cpp
         )
