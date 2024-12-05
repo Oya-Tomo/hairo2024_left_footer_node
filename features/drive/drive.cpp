@@ -29,6 +29,28 @@ QEI::config_t flipper_belt_qei_config = {
     .reverse = false,
 };
 
+PID body_belt_pid(PID::sPID);
+PID::config_t body_belt_pid_config = {
+    .Kp = 0.01,
+    .Ki = 0.00,
+    .Kd = 0.01,
+    .Kf = 0,
+    .guard = true,
+    .min = -0.1,
+    .max = 0.1,
+};
+
+PID flipper_belt_pid(PID::sPID);
+PID::config_t flipper_belt_pid_config = {
+    .Kp = 0.01,
+    .Ki = 0.00,
+    .Kd = 0.01,
+    .Kf = 0,
+    .guard = true,
+    .min = -0.1,
+    .max = 0.1,
+};
+
 void drive_callback_register(uint gpio, uint32_t events)
 {
     body_belt_qei.callback_register(gpio, events);
@@ -42,6 +64,9 @@ void drive_setup()
 
     body_belt_qei.configure(body_belt_qei_config);
     flipper_belt_qei.configure(flipper_belt_qei_config);
+
+    body_belt_pid.configure(body_belt_pid_config);
+    flipper_belt_pid.configure(flipper_belt_pid_config);
 }
 
 void drive_stop()
@@ -52,4 +77,5 @@ void drive_stop()
 
 void drive_task()
 {
+    drive_state_t drive_state = get_drive_state();
 }
