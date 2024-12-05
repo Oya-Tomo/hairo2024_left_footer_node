@@ -1,5 +1,4 @@
 #include "features/connection/context.h"
-#include "context.h"
 
 system_state_t convert_to_system_state_t(uint8_t *data)
 {

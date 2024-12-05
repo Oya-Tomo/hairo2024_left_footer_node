@@ -1,5 +1,4 @@
 #include "features/connection/connection.h"
-#include "connection.h"
 
 // I2C handler
 
@@ -35,10 +34,10 @@ static void i2c_slave_handler(i2c_inst_t *i2c, i2c_slave_event_t event)
 
 // I2C connection
 
-uint8_t I2C_SLAVE_ADDRESS = 0x10;
+const uint8_t I2C_SLAVE_ADDRESS = 0x10;
 
-uint I2C_SDA_PIN = 16;
-uint I2C_SCL = 17;
+const uint I2C_SDA_PIN = 16;
+const uint I2C_SCL = 17;
 
 void connection_setup()
 {

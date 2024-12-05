@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef CONNECTION_CONTEXT_H
+#define CONNECTION_CONTEXT_H
+
 #include "pico/stdlib.h"
 #include "pico/i2c_slave.h"
 #include "hardware/i2c.h"
@@ -15,11 +18,11 @@ typedef struct
 
 // System State Structures
 
-uint8_t IS_RUNNING_BYTE = 0x00;
+const uint8_t IS_RUNNING_BYTE = 0x00;
 
-uint8_t SPEED_BYTE = 0x01;
+const uint8_t SPEED_BYTE = 0x01;
 
-uint8_t ANGLE_BYTE = 0x02;
+const uint8_t ANGLE_BYTE = 0x02;
 
 typedef struct
 {
@@ -41,3 +44,5 @@ system_state_t convert_to_system_state_t(uint8_t *data);
 drive_state_t convert_to_drive_state_t(uint8_t *data);
 
 flipper_state_t convert_to_flipper_state_t(uint8_t *data);
+
+#endif // CONNECTION_CONTEXT_H
