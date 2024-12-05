@@ -15,6 +15,12 @@ typedef struct
 
 // System State Structures
 
+uint8_t IS_RUNNING_BYTE = 0x00;
+
+uint8_t SPEED_BYTE = 0x01;
+
+uint8_t ANGLE_BYTE = 0x02;
+
 typedef struct
 {
     bool is_running;
@@ -27,5 +33,11 @@ typedef struct
 
 typedef struct
 {
-    float angle; // radians (-pi / 2 ~ pi / 2)
+    float angle; // degree (-90.0 ~ 90.0)
 } flipper_state_t;
+
+system_state_t convert_to_system_state_t(uint8_t *data);
+
+drive_state_t convert_to_drive_state_t(uint8_t *data);
+
+flipper_state_t convert_to_flipper_state_t(uint8_t *data);
