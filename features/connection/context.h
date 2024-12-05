@@ -19,7 +19,8 @@ const uint8_t IS_RUNNING_BYTE = 0x00;
 
 const uint8_t SPEED_BYTE = 0x01;
 
-const uint8_t ANGLE_BYTE = 0x02;
+const uint8_t FRONT_ANGLE_BYTE = 0x02;
+const uint8_t BACK_ANGLE_BYTE = 0x03;
 
 typedef struct
 {
@@ -33,7 +34,8 @@ typedef struct
 
 typedef struct
 {
-    float angle; // degree (-90.0 ~ 90.0)
+    float front_angle; // degree (-90.0 ~ 90.0)
+    float back_angle;  // degree (-90.0 ~ 90.0)
 } flipper_state_t;
 
 system_state_t convert_to_system_state_t(uint8_t *data);

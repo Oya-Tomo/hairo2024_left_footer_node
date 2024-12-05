@@ -1,5 +1,7 @@
 #include "features/connection/context.h"
 
+#include <cmath>
+
 system_state_t convert_to_system_state_t(uint8_t *data)
 {
     system_state_t state;
@@ -17,6 +19,7 @@ drive_state_t convert_to_drive_state_t(uint8_t *data)
 flipper_state_t convert_to_flipper_state_t(uint8_t *data)
 {
     flipper_state_t state;
-    state.angle = (float)((int8_t)data[ANGLE_BYTE]) * 90.0 / 128.0;
+    state.front_angle = (float)((int8_t)data[FRONT_ANGLE_BYTE]) * (M_PI / 2.0) / 128.0;
+    state.back_angle = (float)((int8_t)data[BACK_ANGLE_BYTE]) * (M_PI / 2.0) / 128.0;
     return state;
 }
