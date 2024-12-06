@@ -35,7 +35,7 @@ static void i2c_slave_handler(i2c_inst_t *i2c, i2c_slave_event_t event)
 // I2C connection
 
 const uint8_t I2C_SLAVE_ADDRESS = 0x10;
-const uint8_t I2C_BAUDRATE = 100 * 1000;
+const uint32_t I2C_BAUDRATE = 100 * 1000;
 
 const uint I2C_SDA_PIN = 16;
 const uint I2C_SCL_PIN = 17;
