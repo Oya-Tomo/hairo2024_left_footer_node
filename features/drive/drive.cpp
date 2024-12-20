@@ -131,7 +131,7 @@ void set_center_belt_speed(double speed)
     center_belt_duty_ratio = guard(
         center_belt_duty_ratio +
             center_belt_pid.calculate(target_rps, current_rps, get_dt()),
-        1.0, -1.0);
+        -1.0, 1.0);
     center_belt_motor.set_duty_ratio(center_belt_duty_ratio);
 }
 
@@ -147,7 +147,7 @@ void set_front_belt_speed(double speed)
     front_belt_duty_ratio = guard(
         front_belt_duty_ratio +
             front_belt_pid.calculate(target_rps, current_rps, get_dt()),
-        1.0, -1.0);
+        -1.0, 1.0);
     front_belt_motor.set_duty_ratio(front_belt_duty_ratio);
 }
 
@@ -163,6 +163,6 @@ void set_back_belt_speed(double speed)
     back_belt_duty_ratio = guard(
         back_belt_duty_ratio +
             back_belt_pid.calculate(target_rps, current_rps, get_dt()),
-        1.0, -1.0);
+        -1.0, 1.0);
     back_belt_motor.set_duty_ratio(back_belt_duty_ratio);
 }
