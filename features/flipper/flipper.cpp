@@ -18,13 +18,13 @@ MotorDriver3Pins back_flipper_motor(8, 9);
 MotorDriver3Pins::config_t back_flipper_motor_config = {
     .pwm_clkdiv = pwm_clkdiv_calc(10 * 1000, 1000),
     .pwm_wrap = 1000,
-    .reverse = false,
+    .reverse = true,
 };
 
 QEI front_flipper_qei(18, 19);
 QEI::config_t front_flipper_qei_config = {
     .ppr = 48,
-    .reverse = false,
+    .reverse = true,
 };
 
 QEI back_flipper_qei(20, 21);
